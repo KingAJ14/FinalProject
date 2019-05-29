@@ -2,7 +2,7 @@ ArrayList <Pipes> pipeList = new ArrayList();
 class Pipes{
   int top;
   int bottom;
-  int ylength = (int)(Math.random()*651)+50;
+  int ylength = (int)(Math.random()*551)+50;
   int gap = 170;
  void drawPipes(){
  fill(0, 225, 0);
