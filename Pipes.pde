@@ -1,21 +1,39 @@
-ArrayList <Pipes> pipeList = new ArrayList();
-class Pipes{
+
+class Pipes {
   int top;
   int bottom;
-  int ylength = (int)(Math.random()*551)+50;
+  int x1=505;
+  int x2=500;
+  int ylength = (int)(Math.random()*571)+20;
+  int speed=1;
   int gap = 170;
- void drawPipes(){
- fill(0, 225, 0);
- strokeWeight(3.5);
- rect(250, 0, 75, ylength);//top
- rect(245, ylength, 85, 25);//top
- rect(245, ylength+gap, 85, 25);//bottom
- rect(250, ylength+gap+25, 75, 600);//bottom
- }
-  
-  void addPipes(){
-    
+
+  public Pipes() {
+  }
+  void topPipes() {
+    fill(0, 225, 0);
+    strokeWeight(3.5);
+    rect(x1, 0, 75, ylength);//top
+    rect(x2, ylength, 85, 25);//top
+  }
+
+  void bottomPipes() {
+    fill(0, 225, 0);
+    strokeWeight(3.5);
+    rect(x2, ylength+gap, 85, 25);//bottom
+    rect(x1, ylength+gap+25, 75, 600);//bottom
+  }
+  int getBottom(){
+    return x1;
+  }
+  int getBottom2(){
+    return x2;
   }
   
-  
-}
+
+  void move() {
+    x1 = x1 - 6;
+    x2 = x2 - 6;
+    
+    }
+  }
