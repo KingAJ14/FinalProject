@@ -13,6 +13,7 @@ void draw() {
   background(59, 189, 237);
   fly.flapping();
   pipe.move();
+  pipe.checkHit();
   pipe.topPipes();
   pipe.bottomPipes();
   bottom();

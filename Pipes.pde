@@ -5,7 +5,7 @@ class Pipes {
   int x1=505;
   int x2=500;
   int ylength = (int)(Math.random()*571)+20;
-  int speed=1;
+  int speed=5;
   int gap = 170;
 
   public Pipes() {
@@ -29,11 +29,18 @@ class Pipes {
   int getBottom2(){
     return x2;
   }
+ void checkHit(){
+   if(x1==fly.getX()&&ylength==fly.getY()){
+     speed = 0;
+   }
+ }
   
 
   void move() {
-    x1 = x1 - 6;
-    x2 = x2 - 6;
-    
+    x1 = x1 - speed;
+    x2 = x2 - speed;
+    if(x1==fly.getX()&&ylength==fly.getY()){
+     speed = 0;
     }
+  }
   }
